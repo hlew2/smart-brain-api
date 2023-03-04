@@ -21,11 +21,11 @@ const saltRounds = 10;
 
 const app = express();
 
+const PORT = process.env.PORT;
+
 app.use(bodyParser.json());
 
 app.use(cors());
-
-const port = 3001;
 
 app.get('/', (req, res) => {
   res.send('success');
@@ -52,6 +52,6 @@ app.post('/imageurl', (req, res) => {
   image.handleApiCall(req, res)
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
